@@ -1,10 +1,23 @@
-const express = require('express');
+const notes = require('express').Router();
 
-const notesRouter = require('./notes');
+notes.get('/', (req, res) => {
+  console.info(`${req.method} request received for notes`);
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+});
 
-const app = express();
+notes.post('/', (req, res) => {
+  console.info(`${req.method} request received to add a note`);
+  console.log(req.body);
 
-app.use('/api', api);
+  const { title, text } = req.body;
+
+  if (req.body) {
+    const newNote = {
+      title,
+      text,
+    };
+  }
+});
 
 
 let noteTitle;
@@ -191,4 +204,4 @@ if (window.location.pathname === '/notes') {
 
 getAndRenderNotes();
 
-module.exports = app;
+module.exports = notes;

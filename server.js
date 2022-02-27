@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+const api = require('./public/assets/js/notes')
 
 const app = express();
 
@@ -15,13 +17,13 @@ app.get('/notes', (req, res) =>
 
 );
 
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
-);
-
 app.post('/api/notes', (req, res) => {
 
 }
+);
+
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
 app.listen(PORT, () =>
