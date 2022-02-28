@@ -1,4 +1,5 @@
 const notes = require('express').Router();
+const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 
 
 notes.get('/', (req, res) => {
@@ -17,5 +18,12 @@ notes.post('/', (req, res) => {
       title,
       text,
     };
-  }
+
+readAndAppend(newNote, './db/db.json');
+res.json(`Tip added successfully 🚀`);
+} else {
+res.error('Error in adding tip');
+}
 });
+
+module.exports = notes;
