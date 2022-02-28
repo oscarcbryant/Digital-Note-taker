@@ -1,22 +1,12 @@
 [
     {
         "title": "Test Title",
-        "text": "Test text"
+        "text": "Test text",
+        "notes_id": ""
     },
     {
-        "title": "Shop",
-        "text": "Milk"
-    },
-    {
-        "title": "Pay Bills",
-        "text": "Pay gas, electricity and water"
-    },
-    {
-        "title": "Washing",
-        "text": "Put load on"
-    },
-    {
-        "title": "Washing",
-        "text": "jdljdgj"
+        "title": "Pay Bill",
+        "text": "Pay Electricity",
+        "notes_id": "e1ef"
     }
 ]
